@@ -29,18 +29,14 @@ npm install
 You need at least these variables in your .env file. BE SURE TO ADD IT TO GITIGNORE
 
 *This is not compulsory, you could use public RPC URL, but Alchemys work really well and their free tier is more than enough (not sponsored)*
-DEVELOPMENT_ALCHEMY_KEY = "somestringhere"
-PRODUCTION_ALCHEMY_KEY = "somestringhere"
-
-PRIVATE_KEY_DEVELOPMENT = "somenumberhere"
-PRIVATE_KEY_PRODUCTION = "somenumberhere"
+- DEVELOPMENT_ALCHEMY_KEY = "somestringhere"
+- PRODUCTION_ALCHEMY_KEY = "somestringhere"
+*keys for deployment*
+- PRIVATE_KEY_DEVELOPMENT = "somenumberhere"
+- PRIVATE_KEY_PRODUCTION = "somenumberhere"
 
 *To verify the contracts on Etherscan/polyscan etc*
-ETHERSCAN_KEY = "anothernumberhere"
-
-The following are optional and less security critical
-
-PUBLIC_ADDRESS = "notsosecretstringofnumbers"
+- ETHERSCAN_KEY = "anothernumberhere"
 
 # Use the project
 ## deploy contract 
