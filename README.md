@@ -12,6 +12,8 @@ Features:
 
 Also, I have included some basic Waffle tests to the project and a gas report from [hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
 
+![gasreport](https://github.com/IpastorSan/ERC721_NFT/blob/main/gas_report.png)
+
 ## Useful commands to run the project 
 
 You need to have Node.js (>=12.0)installed in your computer
@@ -56,7 +58,7 @@ npx hardhat run scripts/deploy-script.js --network mainnet
 npx hardhat test test/test.js 
 ```
 
-## Veryfy contract 
+## Verify contract 
 ```bash
 npx hardhat verify --network rinkeby **contractAddress**
 ```
