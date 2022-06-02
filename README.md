@@ -1,6 +1,6 @@
 # Basic NFT Contract with EIP-2981 Royalties
 
-This is a basic NFT contract that you could find in the wild. I kept it minimal yet useful. It is designed with a 10l pfp project in mind.
+This is a basic NFT contract that you could find in the wild. I kept it minimal yet useful. It is designed with a 10k pfp project in mind.
 
 Features:
 - EIP-2981 royalties. Set to send 5% of sales proceeds to the deployer of the contract. Note that even if I am using (owner()) in the constructor, this is a piece of information that needs to be overwritten calling ````setRoyalties```` if the contract change Owner.
