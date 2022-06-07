@@ -102,7 +102,7 @@ describe("NFT contract creation, NFT minting, royalties, withdraw,", () => {
     })
   })
 
-  describe("CarbonBits Royalties", () => {
+  describe("CoolPinapple Royalties", () => {
     let marketplaceFactory;
     let marketplace
  
