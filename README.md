@@ -6,11 +6,11 @@ Features:
 - EIP-2981 royalties. Set to send 5% of sales proceeds to the deployer of the contract. Note that even if I am using (owner()) in the constructor, this is a piece of information that needs to be overwritten calling ````setRoyalties```` if the contract change Owner.
 - ````openPublicSale()```` to grant the deployer more control on the minting process, it needs to be called for the minting to happen.
 - Max-tokens-per-wallet and max-tokens-per-mint. Avoid that any single wallet hoards all your collection. This can be bypassed spunning new wallets, but its annoying and the minter has to pay gas fees repeatedly.
-- Modifier to only allow calls from EOA, not from other smart contracts. This is used to avoid certain exploits.
+- `````CallerIsUser```` modifier to only allow calls from EOA, not from other smart contracts. This is used to avoid certain exploits.
 - ````reveal()```` function to change the baseTokenUri and improve the fairness of minting.
 - ````withdraw()```` function. I said this is a minimal yet useful example. You dont want your funds to be locked in the smart contract forever, right? However, bear in mind that this only allows you to withdraw ETH, if any ERC20 is sent to the contract, it will be locked.
 
-Also, I have included some basic Waffle tests to the project and a gas report from [hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
+Some basic Waffle tests are included, as well as a gas report from [hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
 
 ![gasreport](https://github.com/IpastorSan/ERC721_NFT/blob/main/gas_report.png)
 
@@ -58,6 +58,6 @@ npx hardhat test test/test.js
 
 ## Verify contract 
 ```bash
-npx hardhat verify --network rinkeby **contractAddress**
+npx hardhat verify --network **networkhere** **contractAddress**
 ```
 
