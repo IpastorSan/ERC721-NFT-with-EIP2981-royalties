@@ -23,7 +23,7 @@ describe("NFT contract creation, NFT minting, royalties, withdraw,", () => {
     carol = carolAccount.address
     ine = ineAccount.address
 
-    nftFactory = await ethers.getContractFactory("NFTContract")
+    nftFactory = await ethers.getContractFactory("CoolPinapple")
 
     const baseTokenUri = "https://ipfs.io/ipfs/whatever/"
     

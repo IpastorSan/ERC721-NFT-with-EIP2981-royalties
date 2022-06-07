@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import './interfaces/ERC2981Interface.sol';
 
-contract NFTContract is ERC721, Ownable, IERC2981Royalties {
+contract CoolPinapple is ERC721, Ownable, IERC2981Royalties {
     using Counters for Counters.Counter;
 
     struct RoyaltyInfo {

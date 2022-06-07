@@ -7,15 +7,16 @@ async function main() {
 
 // We get the contract to deploy
   let deployment_base_uri = "ipfs://someipfsCIDherewouldbenice/"
-  const NFTContractContract = await hre.ethers.getContractFactory("NFTContract");
-  const NFTContract = await NFTContractContract.deploy(deployment_base_uri);
+  const CoolPinappleContract = await hre.ethers.getContractFactory("CoolPinapple");
+  const CoolPinapple = await CoolPinappleContract.deploy(deployment_base_uri);
 
-  await NFTContract.deployed();
+  await CoolPinapple.deployed();
 
-  console.log("NFTContract deployed to:", NFTContract.address);
+  console.log("CoolPinapple deployed to:", CoolPinapple.address);
+  
   //Uncomment the command that applies
-  // console.log(`See collection in Opensea: https://testnets.opensea.io/${NFTContract.address}`)
-  // console.log(`See collection in Opensea: https://opensea.io/${NFTContract.address}`)
+  // console.log(`See collection in Opensea: https://testnets.opensea.io/${CoolPinapple.address}`)
+  // console.log(`See collection in Opensea: https://opensea.io/${CoolPinapple.address}`)
 
 }
 
