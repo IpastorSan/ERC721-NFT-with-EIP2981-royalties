@@ -1,6 +1,6 @@
 # Basic NFT Contract with EIP-2981 Royalties
 
-This is a basic NFT contract that you could find in the wild. I kept it minimal yet useful. It is designed with a 10l pfp project in mind.
+This is a basic NFT contract that you could find in the wild. I kept it minimal yet useful. It is designed with a 10k pfp project in mind.
 
 Features:
 - EIP-2981 royalties. Set to send 5% of sales proceeds to the deployer of the contract. Note that even if I am using (owner()) in the constructor, this is a piece of information that needs to be overwritten calling ````setRoyalties```` if the contract change Owner.
@@ -11,6 +11,8 @@ Features:
 - ````withdraw()```` function. I said this is a minimal yet useful example. You dont want your funds to be locked in the smart contract forever, right? However, bear in mind that this only allows you to withdraw ETH, if any ERC20 is sent to the contract, it will be locked.
 
 Also, I have included some basic Waffle tests to the project and a gas report from [hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
+
+![gasreport](https://github.com/IpastorSan/ERC721_NFT/blob/main/gas_report.png)
 
 ## Useful commands to run the project 
 
@@ -27,18 +29,16 @@ npm install
 You need at least these variables in your .env file. BE SURE TO ADD IT TO GITIGNORE
 
 *This is not compulsory, you could use public RPC URL, but Alchemys work really well and their free tier is more than enough (not sponsored)*
-DEVELOPMENT_ALCHEMY_KEY = "somestringhere"
-PRODUCTION_ALCHEMY_KEY = "somestringhere"
+- DEVELOPMENT_ALCHEMY_KEY = "somestringhere"
+- PRODUCTION_ALCHEMY_KEY = "somestringhere"
 
-PRIVATE_KEY_DEVELOPMENT = "somenumberhere"
-PRIVATE_KEY_PRODUCTION = "somenumberhere"
+*Keys for deployment*
+- PRIVATE_KEY_DEVELOPMENT = "somenumberhere"
+- PRIVATE_KEY_PRODUCTION = "somenumberhere"
+
 
 *To verify the contracts on Etherscan/polyscan etc*
-ETHERSCAN_KEY = "anothernumberhere"
-
-The following are optional and less security critical
-
-PUBLIC_ADDRESS = "notsosecretstringofnumbers"
+- ETHERSCAN_KEY = "anothernumberhere"
 
 # Use the project
 ## deploy contract 
@@ -56,7 +56,7 @@ npx hardhat run scripts/deploy-script.js --network mainnet
 npx hardhat test test/test.js 
 ```
 
-## Veryfy contract 
+## Verify contract 
 ```bash
 npx hardhat verify --network rinkeby **contractAddress**
 ```
