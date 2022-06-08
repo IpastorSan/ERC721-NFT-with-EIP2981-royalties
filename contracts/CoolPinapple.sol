@@ -131,6 +131,7 @@ contract CoolPinapple is ERC721, Ownable, IERC2981Royalties {
 
         //fallback receive function
         receive() external payable { 
+            revert();
     }
     
 }
