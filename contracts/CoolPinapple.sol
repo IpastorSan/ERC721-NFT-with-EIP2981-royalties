@@ -7,9 +7,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import './interfaces/ERC2981Interface.sol';
 
-contract CoolPinapple is ERC721, Ownable, IERC2981Royalties {
+contract CoolPinapple is ERC721, Ownable {
     using Counters for Counters.Counter;
 
     struct RoyaltyInfo {
@@ -113,7 +112,7 @@ contract CoolPinapple is ERC721, Ownable, IERC2981Royalties {
     //interface for royalties
     function supportsInterface(bytes4 interfaceId) public view override(ERC721) returns (bool){
 
-        return interfaceId == type(IERC2981Royalties).interfaceId || super.supportsInterface(interfaceId);
+        return interfaceId == _INTERFACE_ID_ERC2981 || super.supportsInterface(interfaceId);
     }
 
     function setRoyalties(address recipient, uint256 value) public onlyOwner {
@@ -122,7 +121,7 @@ contract CoolPinapple is ERC721, Ownable, IERC2981Royalties {
         _royalties = RoyaltyInfo(recipient, value);
     }
 
-    function royaltyInfo(uint256, uint256 value) external view override returns (address receiver, uint256 royaltyAmount)
+    function royaltyInfo(uint256, uint256 value) external view returns (address receiver, uint256 royaltyAmount)
     {
         RoyaltyInfo memory royalties = _royalties;
         receiver = royalties.recipient;
